@@ -12,15 +12,7 @@ A simple static site that checks whether it is 5 PM or later in the user's curre
 
 ## Run locally
 
-1. Install dependencies (optional):
-   ```bash
-   npm install
-   ```
-2. Start the server:
-   ```bash
-   npm start
-   ```
-3. Open `http://localhost:3000` in your browser.
+Open `index.html` in a browser.
 
 ## Deploy with GitHub Pages
 
@@ -36,4 +28,4 @@ A GitHub Actions workflow is included at `.github/workflows/gh-pages.yml`. It wi
 ## Notes
 
 - `.nojekyll` is included so GitHub Pages serves the site without Jekyll processing.
-- The `server.js` and tunnel setup are still available for local development, but GitHub Pages is the recommended public deployment route.
+- The repo is now a pure static site, so no local Node server is required.
