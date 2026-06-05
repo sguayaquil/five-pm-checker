@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Is It 5 PM Yet?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <h1>Is It 5 PM Yet?</h1>
+      <p class="subtitle">Tap the button and let the clock tell you whether it's party time yet.</p>
+
+      <button id="checkButton">
+        <span class="button-label">Check Now</span>
+        <span class="button-spinner" aria-hidden="true"></span>
+      </button>
+
+      <section id="result" class="result-card" aria-live="polite">
+        <p>Click the button to find out.</p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

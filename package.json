@@ -1,0 +1,16 @@
+{
+  "name": "is-it-5pm-yet",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node server.js",
+    "tunnel": "npx localtunnel --port 3000"
+  },
+  "dependencies": {
+    "express": "^4.18.4"
+  },
+  "devDependencies": {
+    "localtunnel": "^2.0.2"
+  }
+}
