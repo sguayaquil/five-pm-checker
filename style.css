@@ -102,10 +102,11 @@ button.loading .button-spinner {
 
 .result-card {
   margin-top: 1.75rem;
-  padding: 1.5rem;
-  border-radius: 1.4rem;
-  background: rgba(15, 23, 42, 0.94);
-  border: 1px solid rgba(148, 163, 184, 0.12);
+  padding: 2rem;
+  border-radius: 1.6rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.96));
+  border: 1px solid rgba(99, 102, 241, 0.24);
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.05), 0 30px 70px rgba(15, 23, 42, 0.45);
   position: relative;
   overflow: hidden;
 }
@@ -113,11 +114,22 @@ button.loading .button-spinner {
 .result-card::before {
   content: '';
   position: absolute;
-  top: -15px;
+  top: -20px;
   right: -20px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.25), transparent 55%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.28), transparent 55%);
+  pointer-events: none;
+}
+
+.result-card::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: -10px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.18), transparent 50%);
   pointer-events: none;
 }
 
@@ -127,8 +139,13 @@ button.loading .button-spinner {
 
 .result-card p {
   margin: 0;
-  font-size: 1.15rem;
-  line-height: 1.6;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-shadow: 0 0 18px rgba(99, 102, 241, 0.35);
 }
 
 .result-card strong {
