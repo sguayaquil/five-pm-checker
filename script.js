@@ -83,18 +83,21 @@ function checkTime() {
       return;
     }
 
-    const candidates = timeZones
-      .map(zone => ({
-        ...zone,
-        time: getZoneTime(zone.zone)
-      }))
-      .filter(zone => {
-        const [hourString] = zone.time.split(':');
-        const hour = Number(hourString);
-        return hour >= 17;
-      });
+    const allZones = timeZones.map(zone => ({
+      ...zone,
+      time: getZoneTime(zone.zone),
+      hour: Number(getZoneTime(zone.zone).split(':')[0])
+    }));
 
-    const picked = chooseRandom(candidates);
+    // First, look for locations where it's exactly 5 PM (hour 17)
+    let candidates = allZones.filter(zone => zone.hour === 17);
+
+    // If none found, broaden to 5 PM or later
+    if (candidates.length === 0) {
+      candidates = allZones.filter(zone => zone.hour >= 17);
+    }
+
+    const picked = candidates.length > 0 ? chooseRandom(candidates) : null;
     renderResult(false, picked);
     setLoading(false);
   }, 950);
