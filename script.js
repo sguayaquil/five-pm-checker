@@ -58,16 +58,16 @@ function setLoading(isLoading) {
 
 function renderResult(isFiveOrLater, location) {
   if (isFiveOrLater) {
-    result.innerHTML = `<p>yes! its 5 pm!</p>`;
+    result.innerHTML = `<p>it's 5 pm or later!</p>`;
     return;
   }
 
   if (!location) {
-    result.innerHTML = `<p>yes! its 5pm somewhere!</p>`;
+    result.innerHTML = `<p>it's 5 pm or later somewhere!</p>`;
     return;
   }
 
-  result.innerHTML = `<p>yes! its 5pm in ${location.label}!</p>`;
+  result.innerHTML = `<p>it's 5 pm or later in ${location.label}!</p>`;
 }
 
 function checkTime() {
@@ -104,3 +104,19 @@ function checkTime() {
 }
 
 button.addEventListener('click', checkTime);
+
+// Report bug button
+const reportBugButton = document.getElementById('reportBugButton');
+const bugModal = document.getElementById('bugModal');
+
+reportBugButton.addEventListener('click', () => {
+  bugModal.classList.add('active');
+  bugModal.setAttribute('aria-hidden', 'false');
+});
+
+bugModal.addEventListener('click', (e) => {
+  if (e.target === bugModal) {
+    bugModal.classList.remove('active');
+    bugModal.setAttribute('aria-hidden', 'true');
+  }
+});
